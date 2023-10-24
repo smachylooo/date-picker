@@ -1,11 +1,11 @@
 import React from 'react';
 
-const DateLog = ({day, month, year}) => {
+const DateLog = ({day, month, year, isActive}) => {
     return(
         <div className="">
-            <p className='result'><span className="result-number">{year ? year : "--"}</span> <i>years</i></p>
-            <p className='result'><span className="result-number">{month ? month : "--"}</span> <i>months</i></p>
-            <p className='result'><span className="result-number">{day ? day : "--"}</span> <i>days</i></p>
+            <p className='result'><span className="result-number">{isActive ? year : "--"}</span> <i>years</i></p>
+            <p className='result'><span className="result-number">{isActive ? month : "--"}</span> <i>months</i></p>
+            <p className='result'><span className="result-number">{isActive ? day : "--"}</span> <i>days</i></p>
         </div>
     );
 };

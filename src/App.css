@@ -20,6 +20,10 @@ body{
     padding: 40px;
 }
 
+.all-inputs{
+    display: flex;
+}
+
 .input{
     width: 100px;
     height: 45px;
@@ -27,10 +31,23 @@ body{
     font-weight: 800;
     border: 2px solid #eee;
     border-radius: 5px;
+    padding-left: 10px;
     outline: none;
 }
 
-.input:not(:last-child){
+.input-block{
+    display: grid;
+}
+
+.input-block span{
+    color: #707070;
+    margin-bottom: 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.input-block:not(:last-child){
     margin-right: 22px;
 }
 
