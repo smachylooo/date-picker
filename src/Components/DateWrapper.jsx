@@ -9,6 +9,7 @@ const DateWrapper = (props) => {
     const handaleDay = (e)=>{
         const value =e.target.value;
         setDay(value);
+        setIsActive(false)
         if(!(parseInt(value) && value <= 31))
             <></>
     };
@@ -17,6 +18,7 @@ const DateWrapper = (props) => {
         const value =e.target.value;
         if(parseInt(value) && value <= 12){
             setMonth(value);
+            setIsActive(false)
         }else{
             setMonth('');
         }
@@ -26,6 +28,7 @@ const DateWrapper = (props) => {
         const value =e.target.value;
         if(parseInt(value) && value <= 2023){
             setYear(value);
+            setIsActive(false)
         }else{
             setYear('');
         }

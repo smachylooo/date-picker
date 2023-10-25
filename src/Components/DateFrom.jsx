@@ -7,7 +7,7 @@ const DateForm = (props) => {
         props.setIsActive(true);
     };
     return(
-        <form >
+        <>
             <div className="all-inputs">
                 <div className='input-block'>
                     <span>Day</span>
@@ -26,7 +26,7 @@ const DateForm = (props) => {
                 <hr className="hr" />
                 <a type='submit' style={{ cursor: 'pointer' }} onClick={handaleClick}><img src={logo} className="arrow-buttom"></img></a>
             </div>
-        </form>
+        </>
     );
 };
 
