@@ -4,20 +4,23 @@ import DateLog from "./DateLog";
 
 
 const DateWrapper = (props) => {
+    const [isActive, setIsActive] = useState(false);
     const [day, setDay] = useState('');
     const handaleDay = (e)=>{
         const value =e.target.value;
-        if(parseInt(value) && value <= 31){
-            setDay(value);
+        if((parseInt(value) && value <= 31)){
+          setDay(value);
         }else{
-            setDay('');
+          setDay('');
         }
+        setIsActive(false)            
     };
     const [month, setMonth] = useState('');
     const handaleMonth = (e)=>{
         const value =e.target.value;
         if(parseInt(value) && value <= 12){
             setMonth(value);
+            setIsActive(false)
         }else{
             setMonth('');
         }
@@ -27,6 +30,7 @@ const DateWrapper = (props) => {
         const value =e.target.value;
         if(parseInt(value) && value <= 2023){
             setYear(value);
+            setIsActive(false)
         }else{
             setYear('');
         }
@@ -84,8 +88,8 @@ const DateWrapper = (props) => {
     
     return (
         <div className="date-box">
-            <DateForm day = {day} setDay={setDay} handaleDay={handaleDay} month = {month} setMonth={setMonth} handaleMonth={handaleMonth} year={year} setYear={setYear} handaleYear={handaleYear}/>
-            <DateLog day={age.days} month={age.months} year={age.years}/>
+            <DateForm day = {day} setDay={setDay} handaleDay={handaleDay} month = {month} setMonth={setMonth} handaleMonth={handaleMonth} year={year} setYear={setYear} handaleYear={handaleYear} setIsActive={setIsActive}/>
+            <DateLog day={age.days} month={age.months} year={age.years} isActive={isActive}/>
         </div>
     );
 };
