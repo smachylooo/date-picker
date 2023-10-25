@@ -8,10 +8,12 @@ const DateWrapper = (props) => {
     const [day, setDay] = useState('');
     const handaleDay = (e)=>{
         const value =e.target.value;
-        setDay(value);
-        setIsActive(false)
-        if(!(parseInt(value) && value <= 31))
-            <></>
+        if((parseInt(value) && value <= 31)){
+          setDay(value);
+        }else{
+          setDay('');
+        }
+        setIsActive(false)            
     };
     const [month, setMonth] = useState('');
     const handaleMonth = (e)=>{
